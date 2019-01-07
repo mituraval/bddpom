@@ -1,0 +1,43 @@
+Feature: Route Shout Home Page Check
+
+  Scenario: Check Home Page       # Feature/HomePage_Test.feature:4
+    Given User is on Home Page    # HomePageTestSteps.user_is_on_Home_Page()
+    When User clicks Where my Bus # HomePageTestSteps.user_clicks_Where_my_Bus()
+    Then User is on Routes Page   # HomePageTestSteps.user_is_on_Routes_Page()
+
+  Scenario: Navigate to Schedule page from Home # Feature/HomePage_Test.feature:9
+    When User clicks Schedule                   # HomePageTestSteps.user_clicks_Schedule()
+    Then User is on Schedule Page               # HomePageTestSteps.user_is_on_Schedule_Page()
+
+  Scenario: Navigate to Locate Me page from Home # Feature/HomePage_Test.feature:13
+    When User clicks Locate Me                   # HomePageTestSteps.user_clicks_Locate_Me()
+    Then User is on Locate Me Page               # HomePageTestSteps.user_is_on_Locate_Me_Page()
+
+  Scenario: Validate the Search Address tab in header # Feature/HomePage_Test.feature:17
+    When User clicks Search Address                   # HomePageTestSteps.user_clicks_Search_Address()
+    Then User is on Search Address Page               # HomePageTestSteps.user_is_on_Search_Address_Page()
+
+  Scenario: Valdiate My Notifications tab in header # Feature/HomePage_Test.feature:21
+    When User clicks My Notifications               # HomePageTestSteps.user_clicks_My_Notifications()
+    Then User is on My Notifications page           # HomePageTestSteps.user_is_on_My_Notifications_page()
+
+  Scenario: Validate Service Announcements tab in header # Feature/HomePage_Test.feature:25
+    When User clicks Service Announcements               # HomePageTestSteps.user_clicks_Service_Announcements()
+    Then User is on Service Announcements page           # HomePageTestSteps.user_is_on_Service_Announcements_page()
+Feature: Wheres my Bus Page check
+
+  Scenario: Go to Wheres my Home Page  # Feature/WheresMyBus_Test.feature:3
+    Given User is on the Home Page     # WheresMyBusPageTestSteps.user_is_on_the_Home_Page()
+    When User clicks Wheres my Bus     # WheresMyBusPageTestSteps.user_clicks_Wheres_my_Bus()
+    Then User is on Wheres My Bus Page # WheresMyBusPageTestSteps.user_is_on_Wheres_my_Bus_Page()
+
+  Scenario: Verify route exists and click the route # Feature/WheresMyBus_Test.feature:8
+    Given User is on Wheres My Bus Page             # WheresMyBusPageTestSteps.user_is_on_Wheres_my_Bus_Page()
+    And User verifies routes display                # WheresMyBusPageTestSteps.user_verifies_routes_display()
+    When User clicks the route                      # WheresMyBusPageTestSteps.user_clicks_the_route()
+    Then User in on the trips page                  # WheresMyBusPageTestSteps.user_in_on_the_trips_page()
+
+  Scenario: Verify Trip and stop  # Feature/WheresMyBus_Test.feature:14
+    Given User verifies trip name # WheresMyBusPageTestSteps.user_verifies_trip_name()
+    When User clicks a Stop       # WheresMyBusPageTestSteps.user_clicks_a_Stop()
+    Then User is on Stops page    # WheresMyBusPageTestSteps.user_is_on_Stops_page()
